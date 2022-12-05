@@ -1,30 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <AsideMainLeft v-if="store.getMyUser"/>
+  <router-view class="main"/>
+  <AsideMainRight v-if="store.getMyUser"/>
 </template>
+
+<script setup>
+import { useUserStore } from '@/store/user'
+
+import AsideMainLeft from '@/components/AsideMainLeft.vue'
+import AsideMainRight from '@/components/AsideMainRight.vue'
+
+
+const store = useUserStore()
+
+</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  background-color: var(--white);
+  background-color: bisque;
+
+  display: flex;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.main {
+  flex: 1;
+  background-color: aquamarine;
 }
 </style>
