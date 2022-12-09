@@ -20,14 +20,11 @@ const store = useUserStore()
   width: 100%;
   max-width: 1280px;
   height: 100%;
-  background-color: var(--white);
-  background-color: bisque;
 
   display: flex;
 }
 
 .main {
   flex: 1;
-  background-color: aquamarine;
 }
 </style>

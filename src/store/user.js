@@ -30,5 +30,12 @@ export const useUserStore = defineStore('user', () => {
     return result
   }
 
-  return { getMyUser, signIn }
+
+  async function signOut() {
+    user.value = ""
+    localStorage.removeItem("user")
+    localStorage.removeItem("token")
+  }
+
+  return { getMyUser, signIn, signOut }
 })

@@ -16,3 +16,9 @@ if(!user.getMyUser || !localStorage.getItem("user") || !localStorage.getItem("to
 }
 
 </script>
+
+<style scoped>
+.home {
+  background-color: var(--white);
+}
+</style>

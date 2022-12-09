@@ -7,5 +7,6 @@
 <style scoped>
 .aside-main-right {
   min-width: 260px;
+  background-color: var(--white-light);
 }
 </style>
